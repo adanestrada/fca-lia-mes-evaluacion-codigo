@@ -66,7 +66,7 @@ Sigue los archivos **en orden numérico**. Cada paso depende del anterior.
 ## ⚡ Inicio Rápido
 
 ```bash
-# 1. Clona o descarga esta guía en tu máquina
+# 1. Usa esta guía como referencia general.
 
 # 2. Verifica que tienes todas las herramientas
 docker --version && git --version && java -version && sonar-scanner --version
