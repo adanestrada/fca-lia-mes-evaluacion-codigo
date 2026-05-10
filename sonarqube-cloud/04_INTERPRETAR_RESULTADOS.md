@@ -28,6 +28,14 @@ El dashboard muestra el **Quality Gate** (Puerta de Calidad), que es el veredict
 Debajo del Quality Gate verás las métricas divididas en categorías. SonarCloud muestra dos vistas:
 - **Overall Code:** todo el código del proyecto.
 - **New Code:** solo el código añadido o modificado desde el último análisis (útil en CI/CD).
+
+
+
+> 🚨 **IMPORTANTE:**  La razón principal por la que SonarCloud (y SonarQube) no incluye todas las reglas de seguridad avanzadas, como la detección profunda de Inyección SQL (SQL Injection), en su versión gratuita o comunitaria es una estrategia de diferenciación de producto. Sonar Community +1SonarSource, la empresa detrás de la herramienta, ofrece las capacidades básicas de análisis de calidad de código de forma gratuita, pero reserva el análisis avanzado de seguridad **(conocido como SAST - Static Application Security Testing)** para sus planes de pago.  En la siguiente práctica abordaremos la implementación de estas reglas con herramientas de código abierto.
+
+> 🚨 En esta guía se presentará como referencia los issues de seguridad como si tuviésemos una versión de paga de Sonar sólo para referencia. Esto será diferente a lo que ustedes visualicen en sus reporte de su análisis con su cuenta de Sonar. Es solo referencia.
+
+
 ---
 ## 2. Métricas Principales y su Significado
 ### 🐛 Bugs (Fiabilidad)

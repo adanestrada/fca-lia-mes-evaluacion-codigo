@@ -65,7 +65,9 @@ sudo apt-get install -y openjdk-17-jdk
 ### 4. sonar-scanner (CLI)
 Es la herramienta de línea de comandos que analiza el código y envía los resultados a SonarCloud.
 #### Windows
-1. Descarga el ZIP desde: https://docs.sonarsource.com/sonarqube-cloud/advanced-setup/ci-based-analysis/sonarscanner-cli/
+1. Descarga el ZIP desde: https://docs.sonarsource.com/sonarqube-cloud/advanced-setup/ci-based-analysis/sonarscanner-cli/ 
+![alt text](image.png)
+
 2. Extrae el contenido en `C:\sonar-scanner`
 3. Agrega `C:\sonar-scanner\bin` al `PATH` del sistema:
   - Busca **"Variables de entorno"** en el menú inicio

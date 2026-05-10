@@ -62,14 +62,14 @@ Verás varias opciones:
 - Other CI (Bitbucket Pipelines, GitLab CI, Azure DevOps, Jenkins, etc.)
 - **Manually (with the SonarScanner CLI)**
 Selecciona **"Manually"** o **"With SonarScanner CLI"**.
+
 ### 3.2 Generar el token
 SonarCloud te mostrará una sección para crear un token específico del proyecto:
-1. En el campo de nombre del token escribe: `lab-token`
-2. (Opcional) Selecciona una expiración: **"No expiration"** o `30 days`
-3. Haz clic en el botón **"Generate"**
-Verás aparecer el token, algo similar a:
+1. Dado que el proyecto a analizar tiene Python y otros, Selecciona **Other(for Go, PHP...)**
+2. Elije la opción que corresponda según tu sistema operativo. 
+3. Verás aparecer el token, algo similar a:
 ```
-sqp_a1b2c3d4e5f6g7h8i9j0k1l2m3n4o5p6q7r8
+9583e_XXXXXXXXXXXXXXXXXXXXXXXXXXXX 
 ```
 > 🚨 **IMPORTANTE:** Copia este token **ahora mismo** y guárdalo en un lugar seguro (gestor de contraseñas, archivo de texto local, variable de entorno). **SonarCloud no te lo mostrará de nuevo.**
 ### 3.3 Continuar la configuración
@@ -77,13 +77,24 @@ Una vez copiado el token:
 1. Haz clic en **"Continue"**
 2. SonarCloud te mostrará un **comando de ejemplo** con los parámetros listos para copiar.
 Algo similar a:
-```
+
+#### Linux / macOS
+```bash
 sonar-scanner \
-  -Dsonar.organization=lab-mes-tu-usuario \
-  -Dsonar.projectKey=lab-mes-tu-usuario_vulnerable-api \
-  -Dsonar.sources=. \
-  -Dsonar.host.url=https://sonarcloud.io \
-  -Dsonar.token=sqp_xxxxxxxxxxxxxxxxxxxxxxxx
+  -Dsonar.organization=lab-mes-jestrada \
+  -Dsonar.projectKey=vulnerable-api
+```
+
+#### Windows (PowerShell)
+```powershell
+sonar-scanner.bat `
+  -D"sonar.organization=lab-mes-jestrada" `
+  -D"sonar.projectKey=vulnerable-api"
+```
+
+
+```
+
 ```
 > 📝 **No lo ejecutes todavía.** Lo usaremos en el siguiente paso, cuando ya tengamos el repositorio clonado.
 ---
@@ -94,8 +105,7 @@ Si perdiste el token o necesitas crear uno nuevo, puedes generarlo desde tu perf
 3. Ve a la pestaña **"Security"**
 4. En la sección **"Tokens"**:
    - **Name:** `lab-token-2`
-   - **Type:** `User Token` (o `Project Analysis Token` si sabes a qué proyecto vinculo)
-   - **Expiration:** `No expiration`
+   - **Expiration:** `de manera predeterminada asigna 60 dias`
 5. Haz clic en **"Generate"**
 6. Copia el token generado
 ```
@@ -111,7 +121,7 @@ Antes de continuar, confirma que tienes anotados estos valores:
 │  URL de SonarCloud: https://sonarcloud.io                   │
 │  Organization Key:  lab-mes-tu-usuario                      │
 │  Project Key:       lab-mes-tu-usuario_vulnerable-api       │
-│  Token:             sqp_XXXXXXXXXXXXXXXXXXXXXXXXXXXX        │
+│  Token:             9583e_XXXXXXXXXXXXXXXXXXXXXXXXXXXX      │
 │                                                             │
 └─────────────────────────────────────────────────────────────┘
 ```
