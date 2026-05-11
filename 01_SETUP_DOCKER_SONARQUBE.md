@@ -160,6 +160,27 @@ wsl -d docker-desktop -u root sh -c "sysctl -w vm.max_map_count=262144"
 
 ## 4. Levantar los Contenedores
 
+**⚠️ REQUISITO PREVIO: Docker Daemon Debe Estar Ejecutándose**
+
+Antes de continuar, **asegúrate de que Docker está corriendo**:
+
+- **Windows / macOS:** Abre **Docker Desktop** y verifica que se muestra en la bandeja de sistema.
+- **Linux:** Ejecuta:
+  ```bash
+  sudo systemctl is-active docker
+  ```
+  Si muestra `inactive`, inicia el servicio:
+  ```bash
+  sudo systemctl start docker
+  ```
+
+Si intentas ejecutar `docker compose` sin que el daemon esté corriendo, obtendrás un error:
+```
+Cannot connect to the Docker daemon at unix:///var/run/docker.sock
+```
+
+Una vez confirmado que Docker está activo, procede:
+
 Asegúrate de estar dentro de la carpeta `sonarqube-lab` y ejecuta:
 
 ```bash
