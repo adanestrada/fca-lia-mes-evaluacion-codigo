@@ -36,6 +36,23 @@ docker --version
 docker compose version
 ```
 
+**⚠️ IMPORTANTE - Docker Daemon Debe Estar Ejecutándose**
+
+Antes de ejecutar cualquier comando de `docker` o `docker compose`, **asegúrate de que el Docker daemon está corriendo**:
+
+- **Windows / macOS:** Abre **Docker Desktop** desde el menú inicio/aplicaciones. Debe mostrar el ícono en la bandeja de sistema.
+- **Linux:** Verifica que el servicio Docker está activo:
+  ```bash
+  sudo systemctl is-active docker
+  # Si muestra "inactive", inicia el servicio:
+  sudo systemctl start docker
+  ```
+
+Si el daemon no está corriendo, verás un error como:
+```
+Cannot connect to the Docker daemon at unix:///var/run/docker.sock
+```
+
 Si obtienes números de versión, ya está instalado. Si no, descárgalo aquí:
 
 - 🔗 **Windows / macOS:** https://www.docker.com/products/docker-desktop
